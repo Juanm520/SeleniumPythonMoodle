@@ -18,7 +18,7 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
     #Credenciales e ID del curso
 User = "Juanm520@admin.com"
 Pass = "Metal-Yo.!0481"
-CursosID = [27]
+CursosID = [19, 18, 17, 20, 174, 21, 23, 168, 161]
 Clave = 'Total Cognitivo Bimestre 2'
 
     #Script login y administración
@@ -57,12 +57,16 @@ def SelCategorias():
  for i in range (0, 5): 
     SelectCatsClass[IndexClave].find_element(By.TAG_NAME,'label').click()
     IndexClave = IndexClave + 1
- print (IndexClave)
+
+def Download():
+    driver.find_element(By.ID, "id_submitbutton").click()
+    
 
 
 for CursoID in CursosID:
  CursoCatTree(CursoID)
  SelCategorias()
+ Download()
 
 
 
