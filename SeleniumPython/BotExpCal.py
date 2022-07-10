@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-import os
+from csv import reader
 
 #Inicio del Navegador
 start = webdriver.ChromeOptions()
@@ -18,10 +18,10 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
     #Credenciales e ID del curso
 User = "Juanm520@admin.com"
 Pass = "Metal-Yo.!0481"
-CursosID = [19, 18, 17, 20, 174, 21, 23, 168, 161]
+CursosID = []
 Clave = 'Total Cognitivo Bimestre 2'
 
-    #Script login y administración
+#     #Script login y administración
 driver.get("https://formarinnovar.com/moodle")
 
 WebDriverWait(driver,(1)).until(EC.presence_of_element_located((By.ID, "password")))
